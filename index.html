@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Duarupa</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="https://unpkg.com/feather-icons"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div class="navbar-logo">
+			<img src="foto/logodr.png" alt="Duarupa">
+		</div>
+		<div class="navbar-nav">
+			<a href="#home">Home</a>
+			<a href="#about">Tentang</a>
+			<a href="#panitia">Panitia</a>
+			<a href="#drama">Pementasan</a>
+			<a href="#tiket">Tiket?</a>
+		</div>
+		<div class="navbar-menu">
+			<i data-feather="paperclip"></i>
+		</div>
+	</nav>
+	<!-- Navbar end -->
+
+	<!-- Hero -->
+	<div class="hero" id="home">
+		<div class="title">
+			<h1>DUARUPA</h1>
+			<p>Event pertunjukan drama kelas 10 & pameran bazar Kelas 11 SMK Telkom Lampung</p>
+			<button id="detel">Detail</button>
+		</div>
+	</div>
+	<!-- Hero End -->
+
+	<!-- About -->
+	<section class="about" id="about">
+		<h2>Latar Belakang</h2>
+		<p>Ujian akhir <span>seni budaya</span> itu adalah akar dari Duarupa</p>
+		<div class="row">
+			<div class="slideshow">
+				<div class="slidesimg fade">
+					<div class="detailfoto">2022</div>
+					<img src="foto/duarupa 1.jpg" alt="ujian drama pertama">
+					<div class="text">Ujian Drama</div>
+				</div>
+				<div class="slidesimg fade">
+					<div class="detailfoto">2023</div>
+					<img src="foto/duarupa 2.jpg" alt="ujian drama pertama">
+					<div class="text">Duarupa</div>
+				</div>
+				<div class="slidesimg fade">
+					<div class="detailfoto">2023</div>
+					<img src="foto/duarupa 0.jpg" alt="ujian drama pertama">
+					<div class="text">Panitia Duarupa</div>
+				</div>
+				<!-- tombol Previeus dan Next -->
+				<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+				<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+				<!-- The dots/circles -->
+					<div style="text-align:center">
+					  <span class="dot" onclick="currentSlide(1)"></span>
+					  <span class="dot" onclick="currentSlide(2)"></span>
+					  <span class="dot" onclick="currentSlide(3)"></span>
+					</div>
+			</div>
+			<div class="latarbelakang">
+				<h3>Duarupa</h3>
+				<p>Kreatifitas ialah kemampuan untuk menciptakan sesuatu, yang tidak lain untuk menghasilkan <span>sebuah karya</span>. Bagi generasi muda sudah menjadi kewajiban untuk memiliki suatu karya. Berbekal <span>kreasi dan inovasi</span>, kita bisa mencurahkan seluruh potensi dan gagasan yang kita miliki untuk menumbuhkan rasa percaya diri dalam berkarya.<br>
+				Bagi setiap orang, hasil dari karya yang dimiliki tentunya ingin diakui dan diapresiasi, hal inilah yang membuat kita <span>terpacu</span> dan <span>tidak mudah puas</span> diri dalam mencipta karya-karya baru.<br>
+				SMK Telkom Lampung mengadakan pertunjukan drama mata pelajaran <spam>Seni Budaya</spam> kelas X bersamaan dengan Pameran bazar mata pelajaran <span>PKK</span> kelas XI, Untuk mengapresiasi dan membanggakan potensi dan karya siswa, maka kami mengadakan festival tahunan yang bernama “<span>Duraupa</span>”<br>
+				Dengan adanya festival Duarupa, diharapkan siswa dapat berkarya meluapkan potensi di bidang <span>seni dan industry</span>. Acara ini diselenggarakan dengan tujuan menjunjung seni budaya dan menjadikan <span>kesenian</span> sebagai perantara di bidang industri.
+				</p>
+			</div>
+		</div>
+	</section>
+	<!-- About End -->
+
+	<!-- Panitia Secion -->
+	<section class="panitia" id="panitia">
+		<div class="utama">
+			<h2><span>Panitia</span><br>Pertunjukan.</h2>
+			<img src="foto/p1.png" alt="Titania">
+		</div>
+		<div class="more">
+			<div class="perpanitiaan"></div>
+			<div class="parapanitia">
+				<img src="foto/p2.png" alt="Hafiz">
+				<img src="foto/p3.png" alt="Nera">
+				<img src="foto/p4.png" alt="Jerenica">
+				<img src="foto/p5.png" alt="Aura">
+				<img src="foto/p7.png" alt="Bayu">
+				<img src="foto/p6.png" alt="Joko">
+				<img src="foto/p8.png" alt="Reto">
+			</div>
+		</div>
+	</section>
+	<!-- Panitia End -->
+
+	<!-- Pementasan -->
+	<section class="pementasan" id="drama">
+		<h2>Pementasan<br>Drama.</h2>
+		<br>
+		<img src="foto/Recap.jpg">
+	</section>
+	<!-- Pementasan End -->
+
+	<!-- footer -->
+	<footer>
+		<h3>Nantikan Pementasannya</h3>
+		<h4>06 07 2024</h4>
+		<p>Duraupa Production 2024</p>
+	</footer>
+	<!-- footer end -->
+
+	<script src="js/main.js"></script>
+	<script>
+      feather.replace();
+    </script>
+</body>
+</html>
