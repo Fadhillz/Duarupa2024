@@ -1,32 +1,44 @@
-let slideIndex = 1;
+let slideIndex = 0;
+let autoPlayInterval;
+
 showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
+  clearInterval(autoPlayInterval); // Stop the auto-play temporarily
   showSlides(slideIndex += n);
+  autoPlayInterval = setInterval(() => plusSlides(1), 2000); // Restart auto-play
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  clearInterval(autoPlayInterval); // Stop the auto-play temporarily
+  showSlides(slideIndex = n - 1);
+  autoPlayInterval = setInterval(() => plusSlides(1), 2000); // Restart auto-play
 }
 
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slidesimg");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  
+  if (n >= slides.length) {slideIndex = 0}
+  if (n < 0) {slideIndex = slides.length - 1}
+  
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
+  
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  
+  slides[slideIndex].style.display = "block";
+  dots[slideIndex].className += " active";
 }
 
+// Auto play functionality
+autoPlayInterval = setInterval(() => plusSlides(1), 3500); // Change image every 2 seconds
 
 
 // button detail
