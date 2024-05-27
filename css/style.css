@@ -96,11 +96,6 @@ body {
 	cursor: default;
 }
 
-.hero .title:hover {
-	transform: perspective(500px) scaleY(1) rotateY(22deg);
-	margin-left: 5rem;
-}
-
 .hero .title h1 {
 	margin: 0 auto;
 	padding: 0 ;
@@ -137,6 +132,18 @@ body {
 
 .hero .title button:hover {
 	transform: scale(1.1);
+}
+
+
+/* Duraupa Section */
+.duarupa {
+	min-height: 100vh;
+	padding: .5rem 3% 5rem 2%;
+	background-image: url(../foto/mask1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 /*About section*/
@@ -207,7 +214,7 @@ body {
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
+  color: var(--white);
   font-size: 15px;
   padding: 50px 12px;
   position: absolute;
@@ -218,7 +225,7 @@ body {
 
 /* Number text (1/3 etc) */
 .detailfoto {
-  color: #f2f2f2;
+  color: var(--white);
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
@@ -233,14 +240,14 @@ body {
   height: 10px;
   width: 10px;
   margin: 1rem 3px;
-  background-color: #bbb;
+  background-color: var(--red);
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.active, .dot:hover, .bbb:hover {
+  background-color: var(--yellow);
 }
 
 /* Fading animation */
@@ -258,12 +265,6 @@ body {
 	flex: 1 1 45rem;
 	text-align: left;
 	padding: 0 0 0 1rem;
-}
-
-.about .row .latarbelakang h3 {
-	color: var(--yellow);
-	font-size: 2rem;
-	margin: 0;
 }
 
 .about .row .latarbelakang p {
@@ -326,9 +327,10 @@ body {
 
 /*Pementasan*/
 .pementasan {
-	padding: 1rem 3rem;
+	padding: 5.5rem 3rem 1rem;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 }
 
 .pementasan h2 {
@@ -340,8 +342,64 @@ body {
 
 .pementasan img {
 	max-height: 25rem;
-	align-self: center;
-	border-radius: 10px;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px rgb(0 0 0 / 75%), -3px -3px 5px rgb(255 255 255 / 25%), 0px 0px 0px 1.5px;
+}
+
+.pementasan .row {
+	display: flex;
+	justify-self: center;
+	align-items: center;
+}
+
+.pementasan .row .carausel {
+	/* flex: 1 1 45rem; */
+	position: relative;
+}
+
+.pementasan .row .carausel .caraouselfoto {
+	display: none;
+}
+
+/* Next & previous buttons2 */
+.prev2, .next2{
+	cursor: pointer;
+	top: 50%;
+	width: auto;
+	margin-top: -50px;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+  }
+  
+  /* Position the "next button" to the right2 */
+  .next2 {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+  }
+
+  
+  /* The dots/bullets/indicators */
+  .bbb {
+	cursor: pointer;
+	height: 10px;
+	width: 10px;
+	margin: 1rem 3px;
+	background-color: var(--red);
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+  }
+
+
+.bauwah {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
 }
 
 /*footer*/
@@ -367,10 +425,6 @@ footer {
 
 	.navbar-nav {
 		display: none;
-	}
-
-	.hero .title:hover {
-		margin-left: 3rem;
 	}
 
 	.about .row {
@@ -401,10 +455,6 @@ footer {
 		font-size: 3rem;
 	}
 
-	.hero .title:hover {
-		margin-left: 2rem;
-	}
-
 	.hero .tilte p {
 		font-size: .8rem;
 	}
@@ -415,5 +465,11 @@ footer {
 
 	.panitia .utama h2 {
 		font-size: 1.3rem;
+	}
+}
+
+@media (max-width:420px) {
+	.panitia img {
+		max-width: 7rem;
 	}
 }

@@ -7,7 +7,6 @@
 	<title>Duarupa</title>
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://unpkg.com/feather-icons"></script>
-
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -20,7 +19,7 @@
 		</div>
 		<div class="navbar-nav">
 			<a href="#home">Home</a>
-			<a href="#about">Tentang</a>
+			<a href="#duarupa">Tentang</a>
 			<a href="#panitia">Panitia</a>
 			<a href="#drama">Pementasan</a>
 			<a href="#tiket">Tiket?</a>
@@ -42,6 +41,13 @@
 	<!-- Hero End -->
 
 	<!-- About -->
+	<section class="duarupa" id="duarupa">
+		<h2>Duarupa</h2>
+		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat culpa ex veniam non quidem numquam provident dignissimos? Nostrum, assumenda possimus!</p>
+	</section>
+	<!-- About End -->
+
+	<!-- latarbelakangsection -->
 	<section class="about" id="about">
 		<h2>Latar Belakang</h2>
 		<p>Ujian akhir <span>seni budaya</span> itu adalah akar dari Duarupa</p>
@@ -74,7 +80,6 @@
 					</div>
 			</div>
 			<div class="latarbelakang">
-				<h3>Duarupa</h3>
 				<p>Kreatifitas ialah kemampuan untuk menciptakan sesuatu, yang tidak lain untuk menghasilkan <span>sebuah karya</span>. Bagi generasi muda sudah menjadi kewajiban untuk memiliki suatu karya. Berbekal <span>kreasi dan inovasi</span>, kita bisa mencurahkan seluruh potensi dan gagasan yang kita miliki untuk menumbuhkan rasa percaya diri dalam berkarya.<br>
 				Bagi setiap orang, hasil dari karya yang dimiliki tentunya ingin diakui dan diapresiasi, hal inilah yang membuat kita <span>terpacu</span> dan <span>tidak mudah puas</span> diri dalam mencipta karya-karya baru.<br>
 				SMK Telkom Lampung mengadakan pertunjukan drama mata pelajaran <spam>Seni Budaya</spam> kelas X bersamaan dengan Pameran bazar mata pelajaran <span>PKK</span> kelas XI, Untuk mengapresiasi dan membanggakan potensi dan karya siswa, maka kami mengadakan festival tahunan yang bernama “<span>Duraupa</span>”<br>
@@ -83,7 +88,7 @@
 			</div>
 		</div>
 	</section>
-	<!-- About End -->
+	<!-- end latarbelakang section -->
 
 	<!-- Panitia Secion -->
 	<section class="panitia" id="panitia">
@@ -110,7 +115,41 @@
 	<section class="pementasan" id="drama">
 		<h2>Pementasan<br>Drama.</h2>
 		<br>
-		<img src="foto/Recap.jpg">
+		<div class="row">
+			<div class="carausel">
+				<div class="caraouselfoto fade">
+					<img src="Pementasan/1.png" alt="Bayangan Kekuasaan">
+				</div>
+				<div class="caraouselfoto fade">
+					<img src="Pementasan/2.png" alt="Kingdom Witout King">
+				</div>
+				<div class="caraouselfoto fade">
+					<img src="Pementasan/3.png" alt="Malapetaka">
+				</div>
+				<div class="caraouselfoto fade">
+					<img src="Pementasan/4.png" alt="Kancil Dan Si Siput">
+				</div>
+				<div class="caraouselfoto fade">
+					<img src="Pementasan/5.png" alt="Khanda Iswara">
+				</div>
+				<div class="caraouselfoto fade">
+					<img src="Pementasan/6.png" alt="Roro Jonggrang">
+				</div>
+				<!-- tombol Previeus dan Next -->
+				<br>
+				<!-- The dots/circles -->
+					<div class="bauwah" style="text-align:center">
+					<a class="prev2" onclick="plusSlides2(-1)">&#10094;</a>
+					<span class="bbb" onclick="currentSlide2(1)"></span>
+					<span class="bbb" onclick="currentSlide2(2)"></span>
+					<span class="bbb" onclick="currentSlide2(3)"></span>
+					<span class="bbb" onclick="currentSlide2(4)"></span>
+					<span class="bbb" onclick="currentSlide2(5)"></span>
+					<span class="bbb" onclick="currentSlide2(6)"></span>
+					<a class="next2" onclick="plusSlides2(1)">&#10095;</a>
+					</div>
+			</div>
+		</div>
 	</section>
 	<!-- Pementasan End -->
 
@@ -124,7 +163,7 @@
 
 	<script src="js/main.js"></script>
 	<script>
-      feather.replace();
-    </script>
+	  feather.replace()
+	</script>
 </body>
 </html>

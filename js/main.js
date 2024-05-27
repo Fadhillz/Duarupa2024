@@ -27,6 +27,8 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
+
+
 // button detail
 document.querySelector('#detel').onclick = () => {
   document.querySelector('#about').scrollIntoView({behavior:'smooth'})
@@ -47,3 +49,33 @@ const heroObserver = new IntersectionObserver(
   }, {threshold: 0.7})
 
 heroObserver.observe(heroElement);
+
+// mari eksperiment
+let slideIndex2 = 1;
+showSlides2(slideIndex2);
+
+// Next/previous controls for Slider 2
+function plusSlides2(n) {
+  showSlides2(slideIndex2 += n);
+}
+
+// Thumbnail image controls for Slider 2
+function currentSlide2(n) {
+  showSlides2(slideIndex2 = n);
+}
+
+function showSlides2(n) {
+  let i;
+  let slidess = document.getElementsByClassName("caraouselfoto");
+  let bbbs = document.getElementsByClassName("bbb");
+  if (n > slidess.length) {slideIndex2 = 1}
+  if (n < 1) {slideIndex2 = slidess.length}
+  for (i = 0; i < slidess.length; i++) {
+    slidess[i].style.display = "none";
+  }
+  for (i = 0; i < bbbs.length; i++) {
+    bbbs[i].className = bbbs[i].className.replace(" active", "");
+  }
+  slidess[slideIndex2-1].style.display = "block";
+  bbbs[slideIndex2-1].className += " active";
+}
