@@ -5,6 +5,26 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Duarupa</title>
+	<link rel="icon" href="foto/logodr.png" type="image/png">
+	<link rel="apple-touch-icon" href="foto/logodr.png" type="image/png">
+	<link rel="shortcut icon" type="image/png" href="foto/logodr.png">
+
+	<!-- SEO Tag -->
+	<meta name="author" content="SMK Telkom Lampung">
+	<meta name="language" content="Indonesia">
+	<meta name="robots" content="index, follow, max-image-preview:large">
+	<meta name="title" content="Duarupa - Persembahan Drama Kelas 10 dan Bazar Kelas 11 SMK Telkom Lampung">
+	<meta name="description" content="Duarupa adalah persembahan drama kelas 10 dan bazar kelas 11 SMK Telkom Lampung. Temukan informasi tentang pementasan, drama, dan banyak lagi di sini.">
+	<meta name="keywords" content="Duarupa, Pementasan, Drama, SMK Telkom Lampung, Lampung">
+
+	<meta property="og:title" content="Duarupa - Persembahan Drama Kelas 10 dan Bazar Kelas 11 SMK Telkom Lampung">
+	<meta property="og:description" content="Duarupa adalah persembahan drama kelas 10 dan bazar kelas 11 SMK Telkom Lampung. Temukan informasi tentang pementasan, drama, dan banyak lagi di sini.">
+	<meta property="og:image:alt" content="Duarupa - Persembahan Drama Kelas 10 dan Bazar Kelas 11 SMK Telkom Lampung">
+	<meta property="og:type" content="website">
+	<meta property="og:locale" content="id_ID">
+	<meta property="og:site_name" content="Duarupa - SMK Telkom Lampung">
+
+
 	<link rel="stylesheet" href="css/style.css">
 	<script src="https://unpkg.com/feather-icons"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +32,14 @@
 	<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+	<!-- PopPup -->
+	<div id="popup" class="popup">
+		<div class="popgam">
+			<img src="foto/poster.jpg" alt="Poster" onclick="closePopup()"/>
+		</div>
+	</div>
+	<!-- PopPup End -->
+
 	<!-- Navbar -->
 	<nav class="navbar">
 		<div class="navbar-logo">
@@ -22,13 +50,24 @@
 			<a href="#duarupa">Tentang</a>
 			<a href="#panitia">Panitia</a>
 			<a href="#drama">Pementasan</a>
-			<a href="#tiket">Tiket?</a>
+			<a href="#ticket">Tiket?</a>
 		</div>
-		<div class="navbar-menu">
-			<i data-feather="paperclip"></i>
+		<div class="navbar-menu" id="clipmenu">
+			<i data-feather="menu" class="clipmenu" ></i>
 		</div>
 	</nav>
 	<!-- Navbar end -->
+
+	<!-- Music Player -->
+	<div id="music-controller" onclick="togglePlayPause()">
+		<i id="play-pause-btn"  data-feather="play-circle"></i>
+	</div>
+	
+	<audio id="bg-music" loop>
+	  <source src="aud/trailer2.mp3" type="audio/mpeg">
+	  Your browser does not support the audio element.
+	</audio>
+	<!-- End Music Player -->
 
 	<!-- Hero -->
 	<div class="hero" id="home">
@@ -42,8 +81,10 @@
 
 	<!-- About -->
 	<section class="duarupa" id="duarupa">
-		<h2>Duarupa</h2>
-		<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat culpa ex veniam non quidem numquam provident dignissimos? Nostrum, assumenda possimus!</p>
+		<div class="fduarupa">
+			<h2><span>Duarupa </span>?</h2>
+			<p>Duarupa berasal dari kata dua kata "dua" yang berarti kedua dan "rupa" yang berarti wajah. Jika disatukan, Duarupa bisa dimaknai sebagai "Wajah Kedua". Dalam seni perah atau drama, wajah kedua ini mengartikan bahwa kita sedang memerankan sosok lain, menciptakan karakter yang berbeda dari diri kita sendiri.</p>
+		</div>
 	</section>
 	<!-- About End -->
 
@@ -90,27 +131,6 @@
 	</section>
 	<!-- end latarbelakang section -->
 
-	<!-- Panitia Secion -->
-	<section class="panitia" id="panitia">
-		<div class="utama">
-			<h2><span>Panitia</span><br>Pertunjukan.</h2>
-			<img src="foto/p1.png" alt="Titania">
-		</div>
-		<div class="more">
-			<div class="perpanitiaan"></div>
-			<div class="parapanitia">
-				<img src="foto/p2.png" alt="Hafiz">
-				<img src="foto/p3.png" alt="Nera">
-				<img src="foto/p4.png" alt="Jerenica">
-				<img src="foto/p5.png" alt="Aura">
-				<img src="foto/p7.png" alt="Bayu">
-				<img src="foto/p6.png" alt="Joko">
-				<img src="foto/p8.png" alt="Reto">
-			</div>
-		</div>
-	</section>
-	<!-- Panitia End -->
-
 	<!-- Pementasan -->
 	<section class="pementasan" id="drama">
 		<h2>Pementasan<br>Drama.</h2>
@@ -153,10 +173,71 @@
 	</section>
 	<!-- Pementasan End -->
 
+	<!-- Panitia Secion -->
+	<section class="panitia" id="panitia">
+		<div class="utama">
+			<h2><span>Panitia</span><br>Pertunjukan.</h2>
+			<img src="foto/p1.png" alt="Titania">
+		</div>
+		<div class="more">
+			<div class="perpanitiaan"> <!-- Bagian kosong --> </div>
+			<div class="parapanitia">
+				<img src="foto/p2.png" alt="Hafiz">
+				<img src="foto/p3.png" alt="Nera">
+				<img src="foto/p4.png" alt="Jerenica">
+				<img src="foto/p16.png" alt="Diva">
+				<img src="foto/p5.png" alt="Aura">
+				<img src="foto/p7.png" alt="Bayu">
+				<img src="foto/p6.png" alt="Joko">
+				<img src="foto/p8.png" alt="Reto">
+				<img src="foto/p9.png" alt="Cahyani">
+				<img src="foto/p10.png" alt="Tazkiya">
+				<img src="foto/p11.png" alt="Gufron">
+				<img src="foto/p12.png" alt="Raya">
+				<img src="foto/p13.png" alt="Ayumi">
+				<img src="foto/p14.png" alt="Nando">
+				<img src="foto/p15.png" alt="Fadhil">
+			</div>
+		</div>
+		<aside>
+			<div class="support">
+				<h3>Thanks To</h3>
+				<div class="supportby">
+					<img src="Logo/1.jpg" alt="YPT">
+					<img src="Logo/2.jpg" alt="Stella">
+					<img src="Logo/3.jpg" alt="Kemilau Pesawaran">
+					<img src="Logo/4.jpg" alt="Pesawaran">
+					<img src="Logo/5.jpg" alt="Kominfo Pesawaran">
+					<img src="Logo/6.jpg" alt="Polda Pesawaran">
+				</div>
+			</div>
+		</aside>
+	</section>
+	<!-- Panitia End -->
+
+	<!-- Tiket Section -->
+	<section class="ticket" id="ticket">
+		<h2>Lokasi Pementasan</h2>
+		<p>Museum Transmigrasi, Jl. Raya A. Yani Kecamatan Gedong Tataan</p>
+		<div class="row">
+			<iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.257106978352!2d105.10429847474622!3d-5.377714653785142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e40d375fe1895bd%3A0xe540a1a260281cd1!2sMuseum%20Nasional%20Transmigrasi!5e0!3m2!1sid!2sid!4v1717222436766!5m2!1sid!2sid" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<div class="pesantiket">
+				<div class="texts">
+				<h3>Contact Person</h3>
+				<p>Pemesanan tiket melalui:</p>
+				<h4>085289322384 (Jeren) <button id="admin1">  pesan</button></h4>
+				<h4>081369988458 (Fadhil) <button id="admin2"> pesan</button></h4>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Tiket end -->
+
 	<!-- footer -->
 	<footer>
-		<h3>Nantikan Pementasannya</h3>
-		<h4>06 07 2024</h4>
+		<div id="instagram"><i data-feather="instagram"></i></div>
+		<h3>06 06 2024  || <a href="https://museumketransmigrasian.lampungprov.go.id/" target="blank">Museum Transmigrasi</a></h3>
+		<hr  />
 		<p>Duraupa Production 2024</p>
 	</footer>
 	<!-- footer end -->
