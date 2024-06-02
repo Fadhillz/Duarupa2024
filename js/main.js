@@ -1,44 +1,53 @@
-let slideIndex = 0;
-let autoPlayInterval;
+// Menubutton
+// toggle class active (menu)
+const navbarNav = document.querySelector('.navbar-nav');
+// ketika menu diclick
+document.querySelector('#clipmenu').onclick = () => {
+	navbarNav.classList.toggle('active');
+};
 
+// Klik diluar sidebar untuk hilangkan nav Active
+const clipmenu = document.querySelector('#clipmenu');
+// ketika yang bukan navbar dan menu diklik 
+document.addEventListener('click', function(e) {
+	if (!clipmenu.contains(e.target) && !navbarNav.contains(e.target)) {
+		navbarNav.classList.remove('active');
+	}
+})
+
+
+// Slider pongsi
+let slideIndex = 1;
 showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  clearInterval(autoPlayInterval); // Stop the auto-play temporarily
   showSlides(slideIndex += n);
-  autoPlayInterval = setInterval(() => plusSlides(1), 2000); // Restart auto-play
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  clearInterval(autoPlayInterval); // Stop the auto-play temporarily
-  showSlides(slideIndex = n - 1);
-  autoPlayInterval = setInterval(() => plusSlides(1), 2000); // Restart auto-play
+  showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slidesimg");
   let dots = document.getElementsByClassName("dot");
-  
-  if (n >= slides.length) {slideIndex = 0}
-  if (n < 0) {slideIndex = slides.length - 1}
-  
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  
-  slides[slideIndex].style.display = "block";
-  dots[slideIndex].className += " active";
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
 }
-
-// Auto play functionality
-autoPlayInterval = setInterval(() => plusSlides(1), 3500); // Change image every 2 seconds
+// Autoplay Funcion
+autoPlayInterval = setInterval(() => plusSlides(1), 3500); // Change image every 3,5 seconds
+autoPlayInterval = setInterval(() => plusSlides2(1), 10000); // Change image every 2 seconds
 
 
 // button detail
@@ -89,5 +98,59 @@ function showSlides2(n) {
     bbbs[i].className = bbbs[i].className.replace(" active", "");
   }
   slidess[slideIndex2-1].style.display = "block";
-  bbbs[slideIndex2-1].className += " active";
+  bbbs[slideIndex2-1].className += " active"; 
+}
+
+
+// tombol pesan admin1
+document.querySelector('#admin1').onclick = () => {
+  window.open('https://wa.link/t7y5hb', '_blank');
+}
+
+// tombol pesan admin2
+document.querySelector('#admin2').onclick = () => {
+  window.open('https://wa.link/wc9yf6', '_blank');
+}
+
+// instagram
+document.querySelector('#instagram').onclick = () => {
+  window.open('https://www.instagram.com/duarupa_official/', '_blank');
+}
+
+// popup
+window.onload = function() {
+  var popup = document.getElementById('popup');
+  popup.style.display = 'flex';
+}
+
+function closePopup() {
+  var popup = document.getElementById('popup');
+  popup.style.display = 'none';
+  bgMusic.play();
+}
+
+// player music
+const bgMusic = document.getElementById('bg-music');
+
+function isMusicPlaying() {
+  return !bgMusic.paused;
+}
+
+function togglePlayPause() {
+  if (isMusicPlaying()) {
+    bgMusic.pause();
+  } else {
+    bgMusic.play();
+  }
+}
+
+function changeFeather() {
+    var featherIcon = document.getElementById('feather-icon');
+    var currentFeather = featherIcon.getAttribute('data-feather');
+    
+    if (currentFeather === 'menu') {
+        featherIcon.setAttribute('data-feather', 'instagram');
+    } else {
+        featherIcon.setAttribute('data-feather', 'menu');
+    }
 }
