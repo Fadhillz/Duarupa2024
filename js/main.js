@@ -102,13 +102,13 @@ function showSlides2(n) {
 }
 
 
-// tombol pesan admin1
-document.querySelector('#admin1').onclick = () => {
+// tombol pesan admin2
+document.querySelector('#admin2').onclick = () => {
   window.open('https://wa.link/t7y5hb', '_blank');
 }
 
-// tombol pesan admin2
-document.querySelector('#admin2').onclick = () => {
+// tombol pesan admin1
+document.querySelector('#admin1').onclick = () => {
   window.open('https://wa.link/wc9yf6', '_blank');
 }
 
