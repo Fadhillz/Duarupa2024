@@ -11,8 +11,9 @@
 * {
 	box-sizing: border-box;
 	outline: none;
- 	border: none;
-  	text-decoration: none;
+	border: none;
+	text-decoration: none;
+	margin: 0;
 }
 
 html {
@@ -28,6 +29,24 @@ body {
 	/*height: 1000rem;*/
 }
 
+/* PopPup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--maron);
+    padding: 100vh;
+    z-index: 9999;
+    display: none; /* Mulai tersembunyi */
+}
+	
+.popup .popgam img {
+	height: 30rem;
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px rgb(0 0 0 / 75%), -3px -3px 5px rgb(255 255 255 / 25%), 0px 0px 0px 1.5px;
+}
+	
 
 /*Navbar*/
 .navbar.scroll {
@@ -63,6 +82,10 @@ body {
 
 .navbar .navbar-nav {
 	padding-right: 3rem;
+}
+
+.navbar .navbar-nav a:hover {
+	color: var(--yellow);
 }
 
 .navbar .navbar-nav a {
@@ -144,6 +167,23 @@ body {
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.duarupa h2 {
+	font-size: 2rem;
+	padding-bottom: .3rem;
+}
+
+.duarupa span {
+	color: var(--yellow);
+}
+
+.duarupa .fduarupa {
+	padding: 1rem 1rem;
+	max-width: 45%;
 }
 
 /*About section*/
@@ -183,6 +223,7 @@ body {
 .about .row .slideshow .slidesimg img {
 	width: 100%;
 	border-radius: 0.3rem;
+	box-shadow: 5px 5px 10px rgb(0 0 0 / 75%), -3px -3px 5px rgb(255 255 255 / 25%), 0px 0px 0px 1.5px;
 }
 
 /* Next & previous buttons */
@@ -280,9 +321,11 @@ body {
 /*Panitia Section*/
 .panitia {
 	display: flex;
+	position: relative;
 	flex-wrap: wrap;
 	padding: 5rem;
 	background-color: var(--black);
+	background-image: linear-gradient(to bottom, #00000087, transparent),linear-gradient(to top, #00000082, transparent), linear-gradient(to right, hsl(0deg 100% 50% / 47%), transparent);
 }
 
 .panitia .utama {
@@ -314,15 +357,48 @@ body {
 
 .panitia .more .parapanitia {
 	display: flex;
+	padding-bottom: 3rem;
 	flex: 1 1 70rem;
 	flex-wrap: wrap;
 	flex-direction: row-reverse;
-	justify-content: space-between;
+	justify-content: flex-start;
 }
 
 .panitia img {
 	max-width: 17rem;
 	padding: 1rem 0.3rem;
+}
+
+aside {
+	display: flex;
+	left: 0;
+	bottom: -7%;
+	position: absolute;
+	height: 225px;
+	width: 100%;
+	background-color: white;
+	box-shadow: 0 0 20px rgb(0 0 0);
+	justify-content: center;
+}
+
+aside h3 {
+	padding: 1rem;
+	text-align: center;
+	color: var(--black);
+}
+aside .support {
+	display: flex;
+	padding: 0 1rem;
+	min-width: 100vh;
+	flex-direction: column;
+	justify-content: center;
+}
+
+aside .support .supportby {
+	display: flex;
+	padding: .1 2.3rem;
+	justify-content: center;
+	align-items: center;
 }
 
 /*Pementasan*/
@@ -331,17 +407,19 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	background-color: var(--white);
+	background-image: linear-gradient(to left, #0000007a, transparent);
 }
 
 .pementasan h2 {
-	font-size: 2rem;
+	font-size: 3rem;
 	font-weight: bold;
-	color: var(--yellow);
+	color: var(--black);
 	align-self: flex-start;
 }
 
 .pementasan img {
-	max-height: 25rem;
+	max-height: 27rem;
 	border-radius: 5px;
 	box-shadow: 5px 5px 10px rgb(0 0 0 / 75%), -3px -3px 5px rgb(255 255 255 / 25%), 0px 0px 0px 1.5px;
 }
@@ -368,13 +446,13 @@ body {
 	width: auto;
 	margin-top: -50px;
 	padding: 16px;
-	color: white;
+	color: var(--black);
 	font-weight: bold;
 	font-size: 18px;
 	transition: 0.6s ease;
 	border-radius: 0 3px 3px 0;
 	user-select: none;
-  }
+	}
   
   /* Position the "next button" to the right2 */
   .next2 {
@@ -402,33 +480,217 @@ body {
 	align-items: baseline;
 }
 
+/* Tiket Section */
+
+.ticket {
+	padding: 0.5rem auto;
+	background-color: var(--maron);
+	background-image: linear-gradient(to bottom, #00000075, transparent);
+}
+
+.ticket h2 {
+	font-size: 2rem;
+	color: var(--yellow);
+	padding-top: 12.5rem;
+	text-align: center;
+}
+
+.ticket p {
+	font-size: .85rem;
+	color: var(--white);
+	text-align: center;
+	padding: 0 2rem;
+	margin: 0;
+	padding-bottom: 3rem;
+}
+
+.ticket .row {
+	display: flex;
+	padding: 1rem;
+	justify-content: center;
+}
+
+.ticket .row .maps {
+	height: 360px;
+	width: 420px;
+	border-radius: 10px;
+	margin-top: 3%;
+	box-shadow: 5px 5px 10px rgb(0 0 0 / 75%), -3px -3px 5px rgb(255 255 255 / 25%), 0px 0px 0px 1.5px;
+}
+
+.ticket .row .pesantiket {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 360px;
+	width: 420px;
+	border-radius: 10px;
+	background-color: var(--midmaron);
+	margin: 3%;
+	box-shadow: 5px 5px 10px rgb(0 0 0 / 75%), -3px -3px 5px rgb(255 255 255 / 25%), 0px 0px 0px 1.5px;
+}
+
+.ticket .row .pesantiket .texts h3 {
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.ticket .row .pesantiket p {
+	font-size: 1rem;
+	text-align: center;
+	padding-bottom: 1rem;
+}
+
+.ticket .row .pesantiket .texts h4 {
+	font-size: 1rem;
+	padding: 7px 10px 10px;
+	margin: .5rem auto;
+	background-color: var(--maron);
+	border-radius: 7px;
+	box-shadow: inset 1px 1px 2.5px rgba(0,0,0,0.5);
+}
+
+.ticket .row .pesantiket .texts button {
+	padding: 7px 20px 9px 20px;
+	background-color: var(--yellow);
+	color: var(--maron);
+	font-size: 1rem;
+	border-radius: 4px;
+	margin-left: 30px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.ticket .row .pesantiket .texts button #admin2 {
+	margin-left: 3px;
+}
+
+.ticket .row .pesantiket .texts button:hover {
+	color: var(--white);
+}
+
+/* Music Player */
+#music-controller {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+	transform: scale(2);
+	z-index: 500;
+	}
+  
+  #play-pause-btn {
+	padding: 3px;
+	margin: 5px;
+	background-color: var(--yellow);
+	color: var(--maron);
+	border: none;
+	cursor: pointer;
+	border-radius: 50%;
+	box-shadow: 1px 1px 3px rgb(0 0 0 / 75%), -1px -1px 5px rgb(255 255 255 / 25%), 0px 0px 0px 1.5px;
+	animation: spin 5s infinite linear;
+	}
+  
+  #play-pause-btn:hover {
+	background-color: #0056b3;
+  }
+  
+  @keyframes spin {
+	100% {
+	  transform: rotate(360deg);
+	}
+  }
+
+
+
 /*footer*/
 footer {
 	display: flex;
 	flex-direction: column;
-	padding: 0 3rem;
+	padding: 1rem 3rem;
 	margin: 0;
 	background-color: var(--yellow);
 	color: var(--maron);
 	text-align: center;
 }
 
+footer #instagram {
+	align-self: center;
+	cursor: pointer;
+}
+
+footer #instagram:hover {
+	color: var(--white);
+}
+
+footer hr {
+	border-top: 1px solid var(--black);
+	padding: .2rem 0;
+}
+
+footer a {
+	color: var(--maron);
+}
+
+footer a:hover {
+	color: var(--white);
+}
+
 
 @media (max-width: 900px) {
+
+	.navbar .navbar-menu {
+		display: flex;
+		padding: 0 3rem;
+		z-index: 100;
+	}
+
+	.navbar .navbar-menu .clipmenu{
+		font-size: 55px;
+		color: var(--white);
+		cursor: pointer;
+		transform: rotate(-90deg);
+		transition: .3s ease-in-out;
+	}
+
+	.navbar .navbar-menu .clipmenu:hover {
+		transform: rotate(0);
+	}
+
+	.navbar .navbar-nav {
+		position: absolute;
+		line-height: 3;
+		top: 0;
+		right: -100%;
+		padding-top: 6rem;
+		background-color: transparent;
+		background-image: linear-gradient(to bottom, var(--maron),#4c000dfc,#4c000dc7, #4c000d1f, transparent);
+		width: 9rem;
+		height: 100vh;
+		transition: 0.3s ease-in-out;
+	}
+
+	.navbar .navbar-nav.active {
+		right: 0;
+	}
+
+	.hero .title {
+		padding: 1rem 2rem;
+	}
+
 	.hero .title h1 {
 		font-size: 4.3rem;
 	}
 
 	.navbar, .navbar.scroll {
-		justify-content: center;
-	}
-
-	.navbar-nav {
-		display: none;
+		justify-content: space-between;
 	}
 
 	.about .row {
 		flex-wrap: wrap;
+	}
+
+	.duarupa .fduarupa {
+		max-width: 70%;
 	}
 
 	.panitia img {
@@ -448,9 +710,31 @@ footer {
 		justify-content: center;
 	}
 
+	.ticket .row {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	aside .support {
+		transform: scale(.7);
+	}
+
 }
 
 @media (max-width: 540px) {
+
+	.navbar .navbar-logo {
+		padding: 1rem 1rem;
+	}
+
+	.navbar .navbar-menu {
+		padding: 0 1rem;
+	}
+
+	.hero .title {
+		padding: 1rem 1rem;
+	}
+
 	.hero .title h1 {
 		font-size: 3rem;
 	}
@@ -466,10 +750,41 @@ footer {
 	.panitia .utama h2 {
 		font-size: 1.3rem;
 	}
+
+	.about .row .latarbelakang p {
+		text-align: left;
+	}
+
+	aside {
+		height: 150px;	
+	}
+
+	aside .support {
+		transform: scale(.5);
+	}
+
 }
 
 @media (max-width:420px) {
 	.panitia img {
 		max-width: 7rem;
+	}
+
+	aside {
+		height: 100px;
+	}
+
+	.pementasan h2 {
+		font-size: 2rem;
+	}
+
+	aside .support {
+		transform: scale(.4);
+	}
+}
+
+@media (max-width:380px) {
+	.panitia img {
+		max-width: 5rem;
 	}
 }
