@@ -25,7 +25,7 @@ window.onload = function () {
 let slideIndex = 1;
 showSlides(slideIndex);
 
-// Next/previous controls
+// Next/previous control
 function plusSlides(n) {
   showSlides((slideIndex += n));
 }
